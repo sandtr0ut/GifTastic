@@ -1,0 +1,50 @@
+body {
+  font-family: 'Spinnaker', sans-serif;
+}
+
+/* Header formating */
+header {
+  background-color: cadetblue;
+  text-align: center;
+}
+h1 {
+  padding: 10px 20px 0 20px;
+}
+h2 {
+  padding: 0 20px 10px 20px;
+}
+
+/* Grid layout - Desktop */
+.grid-container {
+  display: grid;
+  grid-template-columns: 640px 460px;
+  grid-gap: 5px;
+  background-color: black;
+  padding: 10px;
+  box-sizing: content-box;
+  margin: 10px auto;
+  width: fit-content;
+}
+.grid-container > div {
+  background-color: antiquewhite;
+  padding: 20px 20px;
+}
+#button-area {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+#image-area {
+  grid-column: 1;
+  grid-row: 2;
+}
+#form-area {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* Style the individual name buttons */
+.name-button {
+  margin: 5px;
+  width: 160px;
+  height: 25px;
+}
