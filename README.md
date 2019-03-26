@@ -1,17 +1,17 @@
 # GifTastic
 
 ## App Description 
-The GifTastic app is essentially, a semi-customizable GIF-image generator, with the following features/functions:
+The GifTastic app was designed as a tool for K-12 kids, giving them an easy was to pull up/view/download images (and potentially, other information) on any American historical figures they are studying in school. A moderate number of test runs has made it clear that Giphy is not an ideal source for this purpose.  Expect an updated source API in future updates.  Check out the app nonetheless!  It is, essentially, a semi-customizable GIF-image generator, with the following features/functions:
 
 * Click any of the topic buttons to generate 10 related images.
 
-* The images will appear below, along with selected meta-data like rating, title, etc. 
+* The images will appear below, along with rating info. 
 
 * Click on an image to watch it animate.
 
 * Click again to freeze it.
 
-* If you would like to see some images based on some other topic, just type it into the search box on the right, and a new button will appear that you can use like the others.
+* If you would like to see some images based on some other person/topic, just type it into the search box on the right, and a new button will appear that you can use, just like the existing ones.
 
 <br>
 
@@ -29,8 +29,8 @@ The GifTastic app is essentially, a semi-customizable GIF-image generator, with 
 ### Future Feature Upgrades
 -------
 * One-click download button for every image
-* OMDB integration
-* Bands-in-Town integration
+* Alternative API integration
+
 
 <br>
  
