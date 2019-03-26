@@ -1,14 +1,16 @@
 $(document).ready(function () {
   
   var nameArray = [
-    "George Washington", "Benjamin Franklin", "Abraham Lincoln", "Helen Keller", "John F Kennedy", "Martin Luther King, Jr", "Franklin D. Roosevelt", "Albert Einstein", "John F. Kennedy", "Robert F. Kennedy", "Thomas Jefferson", "Thomas Alva Edison", "Frederick Douglass", "Susan B. Anthony", "Theodore Roosevelt", "Henry Ford", "Bill Gates", "Steve Jobs", "Jesse Owens", "Jackie Robinson", "Howard Hughes", "Amelia Earhart", "Andrew Carnegie", "Barack Obama", "Mark Twain", "Joseph Smith, Jr.", "J.P. Morgan", "Neil Armstrong", "Malcolm X", "John Glenn", "Bob Dylan", "Billie Jean King", "Chuck Yeager", "Elvis Presley", "Ernest Hemingway", "Marilyn Monroe", "Muhammad Ali", "Jimi Hendrix", "Hugh Hefner"
+    "George Washington", "Benjamin Franklin", "Abraham Lincoln", "John F Kennedy", "Martin Luther King, Jr", "Franklin D. Roosevelt", "Albert Einstein", "John F. Kennedy", "Robert F. Kennedy", "Thomas Jefferson", "Thomas Alva Edison", "Frederick Douglass", "Theodore Roosevelt", "Henry Ford", "Bill Gates", "Steve Jobs", "Jesse Owens", "Jackie Robinson", "Howard Hughes", "Amelia Earhart", "Andrew Carnegie", "Barack Obama", "Mark Twain", "Joseph Smith, Jr.", "J.P. Morgan", "Neil Armstrong", "Malcolm X", "John Glenn", "Bob Dylan", "Billie Jean King", "Chuck Norris", "Elvis Presley", "Ernest Hemingway", "Marilyn Monroe", "Muhammad Ali", "Jimi Hendrix", "Hugh Hefner"
   ];
   
   // Function to Display Images on name-button Clicks
   function displayImages() {
+
+    $("#image-area").empty();
     
     var VIP = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=ZQlhsr3WWOlLaitiQkikLDYzzfYU6tci&q=" + VIP + "&limit=10&offset=0&rating=G&lang=en";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=ZQlhsr3WWOlLaitiQkikLDYzzfYU6tci&q=" + VIP + "&limit=10&offset=0&lang=en";
     
     // ajax call for the click event
     $.ajax({
@@ -30,14 +32,29 @@ $(document).ready(function () {
       // store rating info
       var rating = results[j].rating;
       
+      // // store title info
+      // var gifTitle = results[j].title;
+      
       // create p-element to display rating
       var ratingDisplay = $("<p>").text("Rating: " + rating);
+
+      // create p-element to display title
+      // var titleText = $("<h4>");
+      // titleText.addClass("imgCaption");
+      // var titleDisplay = titleText.text("Title: " + gifTitle);
       
       // create an image tag
       var VIPimg = $("<img>");
-      
+
+      // add a class we can grab
+      VIPimg.addClass("giphy");
+
+           
       // give the image a src attribute
-      VIPimg.attr("src", results[j].images.fixed_width.url);
+      VIPimg.attr("src", results[j].images.fixed_width_still.url);
+      VIPimg.attr("data-still", results[j].images.fixed_width_still.url);
+      VIPimg.attr("data-animate", results[j].images.fixed_width.url);
+      VIPimg.attr("data-state", "still");
       
       // append the displayed image and rating to the image div
       imageDiv.append(VIPimg);
@@ -49,6 +66,22 @@ $(document).ready(function () {
     }
   });
 }
+// Function to Change Image State When Clicked
+$(document).on("click", ".giphy", animateImg);
+
+function animateImg() {
+  var state = $(this).attr("data-state");
+
+  if (state === "still") {
+    $(this).attr("src", $(this).attr("data-animate"));
+    $(this).attr("data-state", "animate");
+    
+  } else {
+    $(this).attr("src", $(this).attr("data-still"));
+    $(this).attr("data-state", "still");
+  }
+}
+
   // Function to Display Buttons
   //  >> runs:
   //    - on load
