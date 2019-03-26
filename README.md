@@ -28,8 +28,11 @@ The GifTastic app was designed as a tool for K-12 kids, giving them an easy was 
 
 ### Future Feature Upgrades
 -------
-* One-click download button for every image
-* Alternative API integration
+*  **+Mobile responsive**
+*  +Additional metadata
+*  **+One-click download button for every image**
+*  +Alternative API integration
+*  +Favorites section
 
 
 <br>
