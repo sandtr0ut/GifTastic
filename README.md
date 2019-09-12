@@ -8,7 +8,7 @@ The GifTastic app is essentially, a semi-customizable GIF-image generator, with 
 
 - The images will appear below, along with selected meta-data like rating, title, etc.
 
-- Click on an image to watch it animate.
+* The images will appear below, along with rating info.
 
 - Click again to freeze it.
 
@@ -37,9 +37,11 @@ See the application deployed [here](https://sandtr0ut.github.io/GifTastic/)
 
 ---
 
-- One-click download button for every image
-- OMDB integration
-- Bands-in-Town integration
+- **+Mobile responsive**
+- +Additional metadata
+- **+One-click download button for every image**
+- +Alternative API integration
+- +Favorites section
 
 <br>
  
